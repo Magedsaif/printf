@@ -22,11 +22,17 @@ int main(void)
 	printf("len2 %d\n", len2);
 	*/
 	int len, len2;
-	len = _printf("len %d\n", 12324654);
-	len2 = printf("len %d\n", 12324654);
+	len = _printf("len %i\n", -INT_MAX-1);
+	len2 = printf("len %i\n", -INT_MAX-1);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 
+
+
+	len = _printf("len %i\n", -5*7);
+	len2 = printf("len %i\n", -5*7);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
 
 	
 	return 0;

@@ -11,6 +11,7 @@ int write_signed_number(va_list args)
 {
 	int num, len, temp, i;
 	char *c; 
+	unsigned int u;
 
 	num = va_arg(args, int);
 	
@@ -39,22 +40,24 @@ int write_signed_number(va_list args)
 	if(c == NULL)
 		return 0;
 	
-	if((num < 0) )
+	if((num < 0))
 		{
 			c[0] = '-';
 			i = 1;
-			num = num * -1;
+			u = num * -1;
+
 		}
 		else
 			i = 0;
 	for (; i < len - 1; i++)
 	{
-		c[len - i - 1] = '0' + (num % 10);
-		num = num / 10;
+		c[len - i - 1] = '0' + (u % 10);
+		
+		u = u / 10;
 	}
 	c[len] = '\0';
 	write(STDOUT_FILENO, c, len);
-	printf("%d",sizeof(c));
+	
 	free(c);
 	return (len - 1);
 }
