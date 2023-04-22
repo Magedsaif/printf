@@ -54,6 +54,7 @@ int write_signed_number(va_list args)
 	}
 	c[len] = '\0';
 	write(STDOUT_FILENO, c, len);
+	printf("%d",sizeof(c));
 	free(c);
 	return (len - 1);
 }

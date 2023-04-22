@@ -111,5 +111,6 @@ int _printf(const char *format, ...)
 			i++;
 		}
 	}
+	va_end(args);
 return (write_count);
 }

@@ -9,20 +9,25 @@
  */
 int main(void)
 {
-
-	_printf("len %d\n", 55);
-	_printf("len2 %i\n", 55);
-	printf("len2 %d\n", 55);
-
-
-
-	_printf("len %d\n", -565);
-	_printf("len2 %i\n", -565);
-	printf("len2 %d\n", -565);
+	/*
+	len = _printf("len %d\n", (unsigned int)INT_MAX + 1024);
+	len2 = printf("len %d\n", (unsigned int)INT_MAX + 1024);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
 
 
-	_printf("len %d\n", -0);
-	_printf("len2 %i\n", -0);
-	printf("len2 %d\n", -0);
+	len = _printf("len %d\n", 0);
+	len2 = printf("len %d\n", 0);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
+	*/
+	int len, len2;
+	len = _printf("len %d\n", 12324654);
+	len2 = printf("len %d\n", 12324654);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
+
+
+	
 	return 0;
 }
