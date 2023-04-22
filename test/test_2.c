@@ -33,21 +33,41 @@ int main(void)
 	printf("len2 %d\n", len2);
 
 
-	len = _printf("len %i\n", 0);
-	len2 = printf("len %i\n", 0);
+
+
+
+
+
+
+	len = _printf("Length:[%d, %i]\n", len, len);
+    len2 = printf("Length:[%d, %i]\n", len2, len2);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 
-	len = _printf("len %i\n", -5*7);
-	len2 = printf("len %i\n", -5*7);
+    len = _printf("Negative:[%d]\n", -762534);
+    len2 = printf("Negative:[%d]\n", -762534);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 
-	len = _printf("len %i\n", 5*7);
-	len2 = printf("len %i\n", 5*7);
+	len =_printf("Len:[%d]\n", len);
+    len2 =printf("Len:[%d]\n", len2);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 
-	
+
+
+
+	len = _printf("len %d\n", 0377);
+	len2 = printf("len %d\n", 0377);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
+
+
+
+
+	len = _printf("len %i\n", 0x54879);
+	len2 = printf("len %i\n", 0x54879);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
 	return 0;
 }

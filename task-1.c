@@ -20,7 +20,6 @@ int write_signed_number(va_list args)
 		write(STDOUT_FILENO, "0", 1);
 		return (1);
 	}
-	
 	len = 1;
 	if(num < 0)
 	{
@@ -33,9 +32,8 @@ int write_signed_number(va_list args)
 		len++;
 	}
 	c = malloc((len + 1) * sizeof(char));
-	
 	if(c == NULL)
-		return 0;
+		return -2;
 	
 	if((num < 0))
 		{
@@ -48,7 +46,6 @@ int write_signed_number(va_list args)
 			u = num;
 			i = 0;
 		}
-			
 	for (; i < len - 1; i++)
 	{
 		c[len - i - 1] = '0' + (u % 10);
@@ -56,7 +53,6 @@ int write_signed_number(va_list args)
 	}
 	c[len] = '\0';
 	write(STDOUT_FILENO, c, len);
-	
 	free(c);
 	return (len - 1);
 }
