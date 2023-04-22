@@ -65,8 +65,8 @@ int main(void)
 
 
 
-	len = _printf("len %i\n", 0x54879);
-	len2 = printf("len %i\n", 0x54879);
+	len = _printf("len %i\n");
+	len2 = printf("len %i\n");
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 	return 0;
