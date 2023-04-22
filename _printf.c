@@ -101,7 +101,10 @@ int _printf(const char *format, ...)
 			write_count++;
 		}
 		else if (s_index == -1)
+		{
 			return (-1);
+		}
+		else
 		{
 			write_count = write_count + spacifiers[s_index].f(args);
 			i++;
