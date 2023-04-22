@@ -26,15 +26,12 @@ int write_signed_number(va_list args)
 	{
 		len += 1;
 	}
-	
 	temp = num;
-	
 	while (temp != 0)
 	{
 		temp = temp / 10;
 		len++;
 	}
-	
 	c = malloc((len + 1) * sizeof(char));
 	
 	if(c == NULL)
@@ -45,14 +42,16 @@ int write_signed_number(va_list args)
 			c[0] = '-';
 			i = 1;
 			u = num * -1;
-
 		}
 		else
+		{
+			u = num;
 			i = 0;
+		}
+			
 	for (; i < len - 1; i++)
 	{
 		c[len - i - 1] = '0' + (u % 10);
-		
 		u = u / 10;
 	}
 	c[len] = '\0';

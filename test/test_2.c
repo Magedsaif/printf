@@ -27,10 +27,24 @@ int main(void)
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 
+	len = _printf("len %i\n", INT_MAX);
+	len2 = printf("len %i\n", INT_MAX);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
 
+
+	len = _printf("len %i\n", 0);
+	len2 = printf("len %i\n", 0);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
 
 	len = _printf("len %i\n", -5*7);
 	len2 = printf("len %i\n", -5*7);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
+
+	len = _printf("len %i\n", 5*7);
+	len2 = printf("len %i\n", 5*7);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 
