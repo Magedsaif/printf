@@ -4,7 +4,6 @@
 #include "main.h"
 #include <string.h> 
 #include <unistd.h>
-#include <stdio.h> 
 int write_string(va_list args)
 {
 	int len;
