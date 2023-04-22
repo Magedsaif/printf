@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * struct specifier - Struct specifier
  *
@@ -14,4 +15,5 @@ typedef struct specifier
 	int (*f)(va_list args);
 } specifier_t;
 int _printf(const char *format, ...);
+int write_signed_number(va_list args);
 #endif /* MAIN_H */

@@ -60,12 +60,12 @@ int is_specifier(specifier_t spacifiers[], char *format)
 	i = 0;
 	if (format[i] == '%')
 	{
+		
 		if (format[i + 1] == '\0')
 			return (-1);/*error*/
-
 		fchar = format[i + 1];
 		/*select spacifier function*/
-		for (i = 0; i < 3; i++)
+		for (i = 0; i < 5; i++)
 		{
 			if (spacifiers[i].s == fchar)
 				return (i);
@@ -84,7 +84,8 @@ int _printf(const char *format, ...)
 	int i, s_index, write_count;
 	va_list args;
 	specifier_t spacifiers[] = {
-	{'s', write_string}, {'c', write_char}, {'%', write_specifier}};
+	{'s', write_string}, {'c', write_char}, {'%', write_specifier}
+	,{'d', write_signed_number},{'i', write_signed_number}};
 
 	if (format == NULL)
 		return (-1);

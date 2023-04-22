@@ -46,5 +46,24 @@ int main(void)
 	len2 = printf("%s %c %%\n", NULL);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
+
+	/*test 2 */
+	printf("------------------tesk2---------------");
+	len = _printf("len %d\n", 565);
+	len2 = printf("len %d\n", 565);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
+
+
+	len = _printf("len %d\n", -565);
+	len2 = printf("len %d\n", -565);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
+
+
+	len = _printf("len %d\n", 0);
+	len2 = printf("len %d\n", 0);
+	printf("len %d\n", len);
+	printf("len2 %d\n", len2);
 	return 0;
 }
