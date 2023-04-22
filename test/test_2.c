@@ -10,9 +10,9 @@
 int main(void)
 {
 
-	_printf("len %d\n", 565);
-	_printf("len2 %i\n", 565);
-	printf("len2 %d\n", 565);
+	_printf("len %d\n", 55);
+	_printf("len2 %i\n", 55);
+	printf("len2 %d\n", 55);
 
 
 

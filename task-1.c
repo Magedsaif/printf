@@ -20,7 +20,7 @@ int write_signed_number(va_list args)
 		return (1);
 	}
 	
-	len = 0;
+	len = 1;
 	if(num < 0)
 	{
 		len += 1;
@@ -55,5 +55,5 @@ int write_signed_number(va_list args)
 	c[len] = '\0';
 	write(STDOUT_FILENO, c, len);
 	free(c);
-	return (len);
+	return (len - 1);
 }
