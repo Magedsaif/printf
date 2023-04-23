@@ -30,7 +30,7 @@ int write_binary_number(va_list args)
 	unsigned int temp,bcount;
 	char binary;
 
-	num = va_arg(args, unsigned int);
+	num = va_arg(args, int);
 
 	if (num == 1 || num == 0)
 	{
