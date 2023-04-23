@@ -28,7 +28,7 @@ int write_signed_number(va_list args)
 		temp = temp / 10;
 		len++;
 	}
-	c = malloc((len + 1) * sizeof(char));
+	c = malloc((len) * sizeof(char));
 	if (c == NULL)
 		return (0);
 	if ((num < 0))
