@@ -1,4 +1,10 @@
+#include "../main.h"
 #include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
 #include "../main.h"
 
 /**
@@ -8,8 +14,6 @@
  */
 int main(void)
 {
-
-	_printf("%b\n", 98);
-	printf("%b\n", 98);
-	return 0;
+    _printf("%b \n", 98);
+    return (0);
 }
