@@ -16,4 +16,5 @@ typedef struct specifier
 } specifier_t;
 int _printf(const char *format, ...);
 int write_signed_number(va_list args);
+int write_decimal(va_list args);
 #endif /* MAIN_H */

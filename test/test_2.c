@@ -61,13 +61,6 @@ int main(void)
 	len2 = printf("len %d\n", 0377);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
-
-
-
-
-	len = _printf("len %i\n");
-	len2 = printf("len %i\n");
-	printf("len %d\n", len);
-	printf("len2 %d\n", len2);
+	
 	return 0;
 }
