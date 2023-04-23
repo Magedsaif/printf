@@ -14,6 +14,8 @@
  */
 int main(void)
 {
-    _printf("%b \n", 98);
+    int len;
+	len = _printf("%b", 98);
+	printf("len %d\n", len);
     return (0);
 }

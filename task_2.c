@@ -56,6 +56,7 @@ int write_binary_number(va_list args)
 	}
 	*/
 	helper((bcount -1), num);
+	binary = '\n';
+	write(STDOUT_FILENO, &binary, 1);
 	return (bcount);
 }
-
