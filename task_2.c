@@ -40,7 +40,7 @@ int write_binary_number(va_list args)
 	}
 
 	temp = num;
-	bcount = 1;
+	bcount = 0;
 	while (temp != 0)
 	{
 		temp = temp / 2;
