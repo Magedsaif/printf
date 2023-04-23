@@ -33,8 +33,6 @@ int write_binary_number(va_list args)
 	char binary;
 
 	num = va_arg(args, int);
-	if(num > UINT_MAX)
-		return (-1);
 	if (num == 1 || num == 0)
 	{
 		binary = '0' + num;
@@ -49,17 +47,6 @@ int write_binary_number(va_list args)
 		temp = temp / 2;
 		bcount++;
 	}
-	/*
-	for (i = bcount - 1; i >= 0; i--) 
-	{ 
-		reminder = num % 2;
-		binary = reminder + '0';
-		write(STDOUT_FILENO, &binary, 1);
-		num = num / 2;
-	}
-	*/
 	helper((bcount -1), num);
-	binary = '\n';
-	write(STDOUT_FILENO, &binary, 1);
 	return (bcount);
 }
