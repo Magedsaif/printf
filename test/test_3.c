@@ -1,5 +1,6 @@
 #include "../main.h"
 #include <stdio.h>
+#include <limits.h>
 /**
  * main - Entry point
  *
@@ -15,7 +16,8 @@
 int main(void)
 {
     int len;
-	len = _printf("%b",4294967295);
+	len = _printf("%b",UINT_MAX);
 	printf("len %d\n", len);
+    
     return (0);
 }

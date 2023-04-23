@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdio.h>
+#include <limits.h>
 
 void helper(int bcount, unsigned int num)
 {	
@@ -31,7 +33,8 @@ int write_binary_number(va_list args)
 	char binary;
 
 	num = va_arg(args, int);
-
+	if(num > UINT_MAX)
+		return (-1);
 	if (num == 1 || num == 0)
 	{
 		binary = '0' + num;
