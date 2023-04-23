@@ -85,7 +85,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	specifier_t spacifiers[] = {
 	{'s', write_string}, {'c', write_char}, {'%', write_specifier}
-	,{'d', write_decimal},{'i', write_decimal}};
+	,{'d', write_decimal},{'i', write_decimal},{'b', write_binary_number}};
 
 	if (format == NULL)
 		return (-1);
