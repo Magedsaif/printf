@@ -85,7 +85,8 @@ int _printf(const char *format, ...)
 	specifier_t spacifiers[] = {
 	{'s', write_string}, {'c', write_char}, {'%', write_specifier}
 	, {'d', write_decimal}, {'i', write_decimal}, {'b', write_binary_number}
-	, {'r', rev_string}, {'R', rev_rot13}
+	, {'r', rev_string}
+	, {'R', rev_rot13}
 	, {'o', write_octal_number}
 	, {'u', write_unsigned_decimal}
 	, {'x', write_hex_number}
