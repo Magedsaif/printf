@@ -19,7 +19,7 @@ int main(void)
 	len = _printf("%b", 98);
 	printf("len %d\n", len);
 
-	len = _printf("%b", UINT_MAX);
+	len = _printf("%b", UINT_MAX + UINT_MAX);
 	printf("len %d\n", len);
     
     return (0);

@@ -45,7 +45,7 @@ int write_binary_number(va_list args)
 	unsigned int temp, bcount;
 	char binary, *s;
 
-	num = va_arg(args, int);
+	num = va_arg(args, unsigned int);
 	if (num == 1 || num == 0)
 	{
 		binary = '0' + num;
