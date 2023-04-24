@@ -24,8 +24,8 @@ char *helper_X(int bcount, unsigned int num)
 	for (i = bcount - 1; i != -1; i--)
 	{
 		reminder = num % 16;
-		
-		if(reminder > 9)
+
+		if (reminder > 9)
 			binary = (reminder - 10 ) + 'A';
 		else
 			binary = reminder + '0';
@@ -51,7 +51,7 @@ int write_heX_number(va_list args)
 	char binary, *s;
 
 	num = va_arg(args, unsigned int);
-	
+
 	if (num == 1 || num == 0)
 	{
 		binary = '0' + num;
@@ -67,10 +67,10 @@ int write_heX_number(va_list args)
 		bcount++;
 	}
 	s = helper_X((bcount), num);
-	if(s == NULL)
+	if (s == NULL)
 		return (0);
-	
-	
+
+
 	bcount =  write(STDOUT_FILENO, s, bcount);
 	free(s);
 	return (bcount);
