@@ -19,5 +19,11 @@ int main(void)
 	len = _printf("%o\n",8);
 	printf("len %d\n", len);
     
+
+	len = _printf("%o\n",7);
+	printf("len %d\n", len);
+
+	len = _printf("%o\n",9);
+	printf("len %d\n", len);
     return (0);
 }

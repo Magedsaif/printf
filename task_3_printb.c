@@ -21,17 +21,14 @@ char *helper(int bcount, unsigned int num)
 	s  = malloc(sizeof(char) * bcount + 1);
 	if (s == NULL)
 		return (s);
-	for (i = bcount - 1; i != 0; i--)
+	for (i = bcount - 1; i != -1; i--)
 	{
 		reminder = num % 2;
 		binary = reminder + '0';
 		s[i] = binary;
 		num = num / 2;
+		
 	}
-	
-	s[0] = binary;
-	if(s[0] == '0')
-		s[0] = '1';
 	s[bcount] = '\0';
 
 	return (s);
