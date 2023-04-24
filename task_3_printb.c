@@ -13,21 +13,26 @@
  * @num: num
  * Return:nothing
 */
-void helper(int bcount, unsigned int num)
+char *helper(int bcount, unsigned int num)
 {
-	int reminder;
-	char binary;
+	int reminder, i;
+	char binary, *s;
 
-	if (bcount == 0)
-		return;
+	s  = malloc(sizeof(char) * bcount + 1);
+	if (s == NULL)
+		return (s);
+	for (i = bcount - 1; i != 0; i--)
+	{
+		reminder = num % 2;
+		binary = reminder + '0';
+		s[i] = binary;
+		num = num / 2;
+		
+	}
+	s[bcount] = '\0';
 
-	reminder = num % 2;
-	binary = reminder + '0';
-	num = num / 2;
-	helper((bcount - 1), num);
-	write(STDOUT_FILENO, &binary, 1);
+	return (s);
 }
-
 /**
  * write_binary_number- a function that writes signed decimal integer
  * @args:variadic arguments
@@ -37,10 +42,8 @@ int write_binary_number(va_list args)
 {
 	unsigned int num;
 	unsigned int temp, bcount;
-	char binary;
+	char binary, *s;
 
-	(void) temp;
-	(void) bcount;
 	num = va_arg(args, int);
 	if (num == 1 || num == 0)
 	{
@@ -49,5 +52,17 @@ int write_binary_number(va_list args)
 		return (1);
 	}
 
-	return (1);
+	temp = num;
+	bcount = 0;
+	while (temp != 0)
+	{
+		temp = temp / 2;
+		bcount++;
+	}
+	s = helper((bcount + 1), num);
+	if(s == NULL)
+		return (0);
+	
+	write(STDOUT_FILENO, s, bcount + 1);
+	return (bcount);
 }
