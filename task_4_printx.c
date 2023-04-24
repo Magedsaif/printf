@@ -8,7 +8,7 @@
 #include <limits.h>
 
 /**
- * helper - a function that helps
+ * helper_x - a function that helps
  * @bcount: count
  * @num: num
  * Return:nothing
