@@ -32,10 +32,6 @@ char *helper_x(int bcount, unsigned int num)
 		s[i] = binary;
 		num = num / 16;
 	}
-
-	s[0] = binary;
-	if (s[0] == '0')
-		s[0] = '1';
 	s[bcount] = '\0';
 
 	return (s);

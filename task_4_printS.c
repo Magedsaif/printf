@@ -13,7 +13,7 @@
  * @num: num
  * Return:nothing
 */
-char *helper_X(int bcount, unsigned int num)
+char *helper_XS(int bcount, unsigned int num)
 {
 	int reminder, i;
 	char binary, *s;
@@ -37,38 +37,45 @@ char *helper_X(int bcount, unsigned int num)
 
 	return (s);
 }
+
 /**
  * write_heX_number- a function that writes signed hexadecimal integer
  * @args:variadic arguments
  * Return:the number of characters printed
 */
-int write_heX_number(va_list args)
+int write_S(va_list args)
 {
-	unsigned int temp, bcount, num;
-	char binary, *s;
+	char *s,*str;
+	int len, i;
 
-	num = va_arg(args, unsigned int);
-
-	if (num == 1 || num == 0)
+	str = va_arg(args, char*);
+	len = 0;
+	if (str == NULL)
 	{
-		binary = '0' + num;
-		write(STDOUT_FILENO, &binary, 1);
-		return (1);
+		str = "(null)";
+		len = strlen(str);
+		write(STDOUT_FILENO, str, len);
+		return (len);
+	}
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if((str[i] >= 0 && str[i] < 32) || (str[i] >= 127))
+		{
+			printf("im here");
+			
+			s = helper_XS((2), str[i]);
+			len +=  write(STDOUT_FILENO, "\\x", 2);
+			len +=  write(STDOUT_FILENO, s, 2);
+			free(s);
+		}
+		else
+		{
+			write(STDOUT_FILENO, &str[i], 1);
+			len = len + 1;
+		}
+		i++;
 	}
 
-	temp = num;
-	bcount = 0;
-	while (temp != 0)
-	{
-		temp = temp / 16;
-		bcount++;
-	}
-	s = helper_X((bcount), num);
-	if (s == NULL)
-		return (0);
-
-
-	bcount =  write(STDOUT_FILENO, s, bcount);
-	free(s);
-	return (bcount);
+	return (len);
 }

@@ -24,4 +24,6 @@ int rev_rot13(va_list args);
 int write_unsigned_decimal(va_list args);
 int write_hex_number(va_list args);
 int write_heX_number(va_list args);
+int write_S(va_list args);
+char *helper_X(int bcount, unsigned int num);
 #endif /* MAIN_H */
