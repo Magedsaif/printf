@@ -62,8 +62,6 @@ int write_S(va_list args)
 	{
 		if((str[i] >= 0 && str[i] < 32) || (str[i] >= 127))
 		{
-			printf("im here");
-			
 			s = helper_XS((2), str[i]);
 			len +=  write(STDOUT_FILENO, "\\x", 2);
 			len +=  write(STDOUT_FILENO, s, 2);

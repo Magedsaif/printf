@@ -19,5 +19,8 @@ int main(void)
 	len = _printf("%S\n", "Best\nSchool");
 	printf("len %d\n", len);
 
+	len = _printf("%S\n", "Hello");
+	printf("len %d\n", len);
+
     return (0);
 }
