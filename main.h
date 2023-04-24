@@ -21,4 +21,5 @@ int write_octal_number(va_list args);
 int rev_string(va_list args);
 char *_strcpy(char *dest,char *src);
 int rev_rot13(va_list args);
+int write_unsigned_decimal(va_list args);
 #endif /* MAIN_H */

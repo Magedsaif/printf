@@ -32,9 +32,9 @@ char *rot13(char *src)
 }
 
 /**
- * rev_string - reverses a string with refrance
- * @s: char pointer
- * Return: the length *s
+ * rev_rot13 - encodes a string into  rot13.
+ * @args: variadic arguments
+ * Return: *src encodd string into  rot13.
  */
 int rev_rot13(va_list args)
 {
@@ -42,18 +42,18 @@ int rev_rot13(va_list args)
 	char *dest, *s;
 
 	s = va_arg(args, char*);
-	if(s == NULL)
+	if (s == NULL)
 		return (0);
 	dest = malloc(strlen(s) * sizeof(char) + 1);
-	if(!dest)
+	if (!dest)
 		return (0);
-	
+
 	s = _strcpy(dest, s);
-	if(s == NULL)
+	if (s == NULL)
 		return (0);
 	rot13(s);
 	len = strlen(s);
 	write(STDOUT_FILENO, s, len);
 	free(dest);
-	return(len);
+	return (len);
 }

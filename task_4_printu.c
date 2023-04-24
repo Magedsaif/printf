@@ -6,9 +6,9 @@
 #include <limits.h>
 
 /**
- *write_decimal - a function that writes signed decimal integer
- *@args:variadic arguments
- *Return:the number of characters printed
+ * write_unsigned_decimal - a function that writes signed decimal integer
+ * @args:variadic arguments
+ * Return:the number of characters printed
 */
 int write_unsigned_decimal(va_list args)
 {
@@ -17,8 +17,8 @@ int write_unsigned_decimal(va_list args)
 	unsigned int t;
 	unsigned int number;
 
-	number = 0;
 	t = va_arg(args, unsigned int);
+	number = t;
 	if (t == 0)
 	{
 		n = '0';
@@ -30,7 +30,7 @@ int write_unsigned_decimal(va_list args)
 	t = 1;
 	while ((number / t) > 9)
 		t *= 10;
-	
+
 	while (t != 0)
 	{
 		n = '0' + (number / t);
@@ -39,6 +39,6 @@ int write_unsigned_decimal(va_list args)
 		t /= 10;
 		size++;
 	}
-	
+
 	return (size);
 }

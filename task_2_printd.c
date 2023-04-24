@@ -5,15 +5,16 @@
 #include <stdarg.h>
 
 /**
- *write_decimal - a function that writes signed decimal integer
- *@args:variadic arguments
- *Return:the number of characters printed
+ * write_decimal - a function that writes signed decimal integer
+ * @args:variadic arguments
+ * Return: the number of characters printed
 */
 int write_decimal(va_list args)
 {
 	char n;
 	int size, t;
 	unsigned int number;
+
 	t = va_arg(args, int);
 	if (t == 0)
 	{
@@ -36,7 +37,7 @@ int write_decimal(va_list args)
 	t = 1;
 	while ((number / t) > 9)
 		t *= 10;
-	
+
 	while (t != 0)
 	{
 		n = '0' + (number / t);
@@ -45,6 +46,6 @@ int write_decimal(va_list args)
 		t /= 10;
 		size++;
 	}
-	
+
 	return (size);
 }
