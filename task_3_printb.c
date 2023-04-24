@@ -39,6 +39,8 @@ int write_binary_number(va_list args)
 	unsigned int temp, bcount;
 	char binary;
 
+	(void) temp;
+	(void) bcount;
 	num = va_arg(args, int);
 	if (num == 1 || num == 0)
 	{
@@ -47,6 +49,5 @@ int write_binary_number(va_list args)
 		return (1);
 	}
 
-	
-	return (bcount);
+	return (1);
 }
