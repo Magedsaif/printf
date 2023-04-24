@@ -24,24 +24,24 @@ char *helper_x(int bcount, unsigned int num)
 	for (i = bcount - 1; i != -1; i--)
 	{
 		reminder = num % 16;
-		
-		if(reminder > 9)
-			binary = (reminder - 10 ) + 'a';
+
+		if (reminder > 9)
+			binary = (reminder - 10) + 'a';
 		else
 			binary = reminder + '0';
 		s[i] = binary;
 		num = num / 16;
 	}
-	
+
 	s[0] = binary;
-	if(s[0] == '0')
+	if (s[0] == '0')
 		s[0] = '1';
 	s[bcount] = '\0';
 
 	return (s);
 }
 /**
- * write_binary_number- a function that writes signed decimal integer
+ * write_hex_number- a function that writes signed hexadecimal integer
  * @args:variadic arguments
  * Return:the number of characters printed
 */
@@ -51,7 +51,7 @@ int write_hex_number(va_list args)
 	char binary, *s;
 
 	num = va_arg(args, unsigned int);
-	
+
 	if (num == 1 || num == 0)
 	{
 		binary = '0' + num;
@@ -67,10 +67,10 @@ int write_hex_number(va_list args)
 		bcount++;
 	}
 	s = helper_x((bcount), num);
-	if(s == NULL)
+	if (s == NULL)
 		return (0);
-	
-	
+
+
 	bcount =  write(STDOUT_FILENO, s, bcount);
 	free(s);
 	return (bcount);
