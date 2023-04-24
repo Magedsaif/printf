@@ -40,15 +40,13 @@ int write_binary_number(va_list args)
 	char binary;
 
 	num = va_arg(args, int);
-	
-
-	temp = num;
-	bcount = 0;
-	while (temp != 0)
+	if (num == 1 || num == 0)
 	{
-		temp = temp / 2;
-		bcount++;
+		binary = '0' + num;
+		write(STDOUT_FILENO, &binary, 1);
+		return (1);
 	}
-	helper((bcount - 1), num);
+
+	
 	return (bcount);
 }
