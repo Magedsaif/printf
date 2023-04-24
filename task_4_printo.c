@@ -28,9 +28,9 @@ char *helper_o(int bcount, unsigned int num)
 		s[i] = binary;
 		num = num / 8;
 	}
-	
+
 	s[0] = binary;
-	if(s[0] == '0')
+	if (s[0] == '0')
 		s[0] = '1';
 	s[bcount] = '\0';
 
@@ -47,7 +47,7 @@ int write_octal_number(va_list args)
 	char binary, *s;
 
 	num = va_arg(args, unsigned int);
-	
+
 	if (num == 1 || num == 0)
 	{
 		binary = '0' + num;
@@ -63,10 +63,10 @@ int write_octal_number(va_list args)
 		bcount++;
 	}
 	s = helper_o((bcount), num);
-	if(s == NULL)
+	if (s == NULL)
 		return (0);
-	
-	
+
+
 	bcount =  write(STDOUT_FILENO, s, bcount);
 	free(s);
 	return (bcount);
