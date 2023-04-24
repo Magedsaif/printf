@@ -40,12 +40,7 @@ int write_binary_number(va_list args)
 	char binary;
 
 	num = va_arg(args, int);
-	if (num == 1 || num == 0)
-	{
-		binary = '0' + num;
-		write(STDOUT_FILENO, &binary, 1);
-		return (1);
-	}
+	
 
 	temp = num;
 	bcount = 0;
