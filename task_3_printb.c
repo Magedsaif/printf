@@ -63,7 +63,8 @@ int write_binary_number(va_list args)
 	if(s == NULL)
 		return (0);
 	
-	write(STDOUT_FILENO, s, bcount + 1);
+	
+	bcount =  write(STDOUT_FILENO, s, bcount);
 	free(s);
 	return (bcount);
 }
