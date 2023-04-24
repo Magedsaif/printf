@@ -26,15 +26,15 @@ char *helper_X(int bcount, unsigned int num)
 		reminder = num % 16;
 
 		if (reminder > 9)
-			binary = (reminder - 10 ) + 'A';
+			binary = (reminder - 10) + 'A';
 		else
 			binary = reminder + '0';
 		s[i] = binary;
 		num = num / 16;
 	}
-	
+
 	s[0] = binary;
-	if(s[0] == '0')
+	if (s[0] == '0')
 		s[0] = '1';
 	s[bcount] = '\0';
 
