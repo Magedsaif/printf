@@ -16,7 +16,10 @@
 int main(void)
 {
     int len;
-	len = _printf("%b\n",98);
+	len = _printf("%b", 98);
+	printf("len %d\n", len);
+
+	len = _printf("%b\n", UINT_MAX);
 	printf("len %d\n", len);
     
     return (0);
