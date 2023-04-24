@@ -8,7 +8,7 @@
 #include <limits.h>
 
 /**
- * helper - a function that helps
+ * helper_X - a function that helps
  * @bcount: count
  * @num: num
  * Return:nothing
@@ -41,7 +41,7 @@ char *helper_X(int bcount, unsigned int num)
 	return (s);
 }
 /**
- * write_binary_number- a function that writes signed decimal integer
+ * write_heX_number- a function that writes signed hexadecimal integer
  * @args:variadic arguments
  * Return:the number of characters printed
 */
