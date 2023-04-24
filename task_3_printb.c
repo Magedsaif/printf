@@ -60,7 +60,6 @@ int write_binary_number(va_list args)
 		temp = temp / 2;
 		bcount++;
 	}
-	printf("bcount  = %d\n", bcount);
 	s = helper((bcount), num);
 	if(s == NULL)
 		return (0);
