@@ -17,5 +17,4 @@ typedef struct specifier
 int _printf(const char *format, ...);
 int write_decimal(va_list args);
 int write_binary_number(va_list args);
-int rev_string(va_list args);
 #endif /* MAIN_H */
