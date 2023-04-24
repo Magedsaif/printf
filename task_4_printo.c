@@ -37,7 +37,7 @@ char *helper_o(int bcount, unsigned int num)
 	return (s);
 }
 /**
- * write_binary_number- a function that writes signed decimal integer
+ * write_octal_number - a function that writes signed octal integer
  * @args:variadic arguments
  * Return:the number of characters printed
 */
