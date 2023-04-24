@@ -23,4 +23,5 @@ char *_strcpy(char *dest, char *src);
 int rev_rot13(va_list args);
 int write_unsigned_decimal(va_list args);
 int write_hex_number(va_list args);
+int write_heX_number(va_list args);
 #endif /* MAIN_H */

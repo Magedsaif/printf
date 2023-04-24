@@ -16,11 +16,11 @@
 int main(void)
 {
     int len;
-	len = _printf("%x\n",16);
+	len = _printf("%X\n",16);
 	printf("len %d\n", len);
     
 
-	len = _printf("%x\n",15);
+	len = _printf("%X\n",15);
 	printf("len %d\n", len);
 
 	len = _printf("%o\n",17);
