@@ -1,6 +1,19 @@
 #include "main.h"
 #include <string.h>
 #include <unistd.h>
+char *_strcpy(char *dest,char *src)
+{	
+	int i;
+	
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = src[i];
+	return dest;
+}
 /**
  * rev_string - reverses a string with refrance
  * @s: char pointer
@@ -19,7 +32,7 @@ int rev_string(va_list args)
 	if(!dest)
 		return (0);
 	
-	s = strcpy(dest, s);
+	s = _strcpy(dest, s);
 	if(s == NULL)
 		return (0);
 	

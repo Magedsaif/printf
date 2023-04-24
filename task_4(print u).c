@@ -16,6 +16,8 @@ int write_unsigned_decimal(va_list args)
 	int size;
 	unsigned int t;
 	unsigned int number;
+
+	number = 0;
 	t = va_arg(args, unsigned int);
 	if (t == 0)
 	{
