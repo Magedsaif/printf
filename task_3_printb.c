@@ -29,6 +29,7 @@ char *helper(int bcount, unsigned int num)
 		num = num / 2;
 		
 	}
+	s[0] = binary;
 	s[bcount] = '\0';
 
 	return (s);
@@ -59,7 +60,8 @@ int write_binary_number(va_list args)
 		temp = temp / 2;
 		bcount++;
 	}
-	s = helper((bcount + 1), num);
+	printf("bcount  = %d\n", bcount);
+	s = helper((bcount), num);
 	if(s == NULL)
 		return (0);
 	
