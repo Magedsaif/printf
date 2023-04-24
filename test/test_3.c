@@ -7,7 +7,6 @@
  * Return: Always 0
  */
 #include "../main.h"
-
 /**
  * main - Entry point
  *
@@ -16,10 +15,9 @@
 int main(void)
 {
     int len;
-	len = _printf("%b", 98);
-	printf("len %d\n", len);
+	
 
-	len = _printf("%b", UINT_MAX + UINT_MAX);
+	len = _printf("%b", 2147483648 + 1);
 	printf("len %d\n", len);
     
     return (0);
