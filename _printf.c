@@ -83,7 +83,8 @@ int _printf(const char *format, ...)
 	int i, s_index, write_count;
 	va_list args;
 	specifier_t spacifiers[] = {
-	{'s', write_string}, {'c', write_char}
+	  {'s', write_string}
+	, {'c', write_char}
 	, {'%', write_specifier}
 	, {'d', write_decimal}
 	, {'i', write_decimal}
