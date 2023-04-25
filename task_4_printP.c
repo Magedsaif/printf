@@ -45,11 +45,11 @@ char *helper_xP(int bcount, unsigned long num)
 */
 int write_P(va_list args)
 {
-	
+
 	unsigned long  num, temp;
 	int bcount;
 	char *s;
-	
+
 	bcount = 0;
 	num = (unsigned long) va_arg(args, void *);
 	if (num == 0)
@@ -72,6 +72,6 @@ int write_P(va_list args)
 
 	bcount =  write(STDOUT_FILENO, s, bcount);
 	free(s);
-	
+
 	return (bcount + 2);
 }
