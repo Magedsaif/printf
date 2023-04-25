@@ -27,4 +27,5 @@ int write_heX_number(va_list args);
 int write_S(va_list args);
 char *helper_X(int bcount, unsigned int num);
 int write_P(va_list args);
+int write_flags(va_list args);
 #endif /* MAIN_H */
