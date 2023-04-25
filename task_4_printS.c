@@ -8,7 +8,7 @@
 #include <limits.h>
 
 /**
- * helper_X - a function that helps
+ * helper_XS - a function that helps
  * @bcount: count
  * @num: num
  * Return:nothing
@@ -39,13 +39,13 @@ char *helper_XS(int bcount, unsigned int num)
 }
 
 /**
- * write_heX_number- a function that writes signed hexadecimal integer
+ * write_S - a function that writes signed hexadecimal integer
  * @args:variadic arguments
  * Return:the number of characters printed
 */
 int write_S(va_list args)
 {
-	char *s,*str;
+	char *s, *str;
 	int len, i;
 
 	str = va_arg(args, char*);
@@ -60,7 +60,7 @@ int write_S(va_list args)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if((str[i] >= 0 && str[i] < 32) || (str[i] >= 127))
+		if ((str[i] >= 0 && str[i] < 32) || (str[i] >= 127))
 		{
 			s = helper_XS((2), str[i]);
 			len +=  write(STDOUT_FILENO, "\\x", 2);
