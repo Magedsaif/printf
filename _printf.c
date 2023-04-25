@@ -64,7 +64,7 @@ int is_specifier(specifier_t spacifiers[], char *format)
 			return (-1);/*error*/
 		fchar = format[i + 1];
 		/*select spacifier function*/
-		for (i = 0; i < 14; i++)/*loop through each specifier in array*/
+		for (i = 0; i < 17; i++)/*loop through each specifier in array*/
 		{
 			/*checking for a match in the format given*/
 			if (spacifiers[i].s == fchar)
