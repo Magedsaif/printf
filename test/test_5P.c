@@ -16,10 +16,9 @@
 int main(void)
 {
 	int len, len2;
-	char *c = "enmad";
 	
-	len2 = printf("len %p\n",  c);
-	len = _printf("len %p\n", c);
+	len2 = printf("len %p\n",  NULL);
+	len = _printf("len %p\n", NULL);
 	printf("len %d\n", len);
 	printf("len2 %d\n", len2);
 	
