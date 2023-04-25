@@ -39,7 +39,7 @@ char *helper_XS(int bcount, unsigned int num)
 }
 
 /**
- * write_S - a function that writes signed hexadecimal integer
+ * write_S - a function that prints the string.
  * @args:variadic arguments
  * Return:the number of characters printed
 */
