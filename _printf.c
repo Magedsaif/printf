@@ -15,7 +15,7 @@ int write_string(va_list args)
 	if (str == NULL)
 		str = "(null)";
 	len = strlen(str);
-	write(STDOUT_FILENO, str, len);
+	write(STDOUT_FILENO, str, len);/*printing string to screen*/
 
 	return (len);
 }
@@ -29,7 +29,7 @@ int write_char(va_list args)
 	char c;
 
 	c = (char) va_arg(args, int);
-	write(STDOUT_FILENO, &c, 1);
+	write(STDOUT_FILENO, &c, 1);/*printing chars to screen*/
 
 	return (1);
 }
@@ -41,7 +41,7 @@ int write_char(va_list args)
 int write_specifier(va_list args)
 {
 	(void) args;
-	write(STDOUT_FILENO, "%", 1);
+	write(STDOUT_FILENO, "%", 1);/*prints single specifier to screen*/
 
 	return (1);
 }
@@ -64,10 +64,11 @@ int is_specifier(specifier_t spacifiers[], char *format)
 			return (-1);/*error*/
 		fchar = format[i + 1];
 		/*select spacifier function*/
-		for (i = 0; i < 14; i++)
+		for (i = 0; i < 14; i++)/*loop through each specifier in array*/
 		{
+			/*checking for a match in the format given*/
 			if (spacifiers[i].s == fchar)
-				return (i);
+				return (i);/*return element No. to get the right function*/
 		}
 	}
 	/*not found*/
@@ -82,6 +83,7 @@ int _printf(const char *format, ...)
 {
 	int i, s_index, write_count;
 	va_list args;
+	/*spcifirs array of type specifier_t(struct)with right functions to call*/
 	specifier_t spacifiers[] = {
 	  {'s', write_string}, {'c', write_char}
 	, {'%', write_specifier}, {'d', write_decimal}
