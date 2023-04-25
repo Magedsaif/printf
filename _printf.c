@@ -64,7 +64,7 @@ int is_specifier(specifier_t spacifiers[], char *format)
 			return (-1);/*error*/
 		fchar = format[i + 1];
 		/*select spacifier function*/
-		for (i = 0; i < 17; i++)/*loop through each specifier in array*/
+		for (i = 0; i < 14; i++)/*loop through each specifier in array*/
 		{
 			/*checking for a match in the format given*/
 			if (spacifiers[i].s == fchar)
@@ -91,7 +91,7 @@ int _printf(const char *format, ...)
 	, {'r', rev_string}, {'R', rev_rot13}
 	, {'o', write_octal_number}, {'u', write_unsigned_decimal}
 	, {'x', write_hex_number}, {'X', write_heX_number}, {'S', write_S}
-	, {'p', write_P}, {'#', write_flags}, {' ', write_flags}, {'+', write_flags}};
+	, {'p', write_P},};
 
 	if (format == NULL)
 		return (-1);
