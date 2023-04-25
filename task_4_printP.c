@@ -48,19 +48,13 @@ int write_P(va_list args)
 	
 	unsigned long  num, temp;
 	int bcount;
-	char binary, *s;
+	char *s;
 	
 	bcount = 0;
 	num = (unsigned long) va_arg(args, void *);
 	if (num == 0)
 	{
 		bcount += write(STDOUT_FILENO, "(nil)", 5);
-		return (bcount);
-	}
-	if (num == 1)
-	{
-		binary = '0' + num;
-		bcount += write(STDOUT_FILENO, &binary, 1);
 		return (bcount);
 	}
 	bcount += write(STDOUT_FILENO, "0x", 2);
